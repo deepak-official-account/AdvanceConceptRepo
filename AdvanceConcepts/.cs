@@ -9,7 +9,15 @@ namespace AdvanceConcepts
 {
 	public partial class WebForm2 : System.Web.UI.Page
 	{
-		protected void Page_Load(object sender, EventArgs e)
+        protected void LogoutBtn_Click(object sender, EventArgs e)
+            {
+            if (Session["name"] != null)
+                {
+                Session["name"] = null;
+                Response.Redirect("ContactUs.aspx");
+                }
+        }
+        protected void Page_Load(object sender, EventArgs e)
 		{
 
 
